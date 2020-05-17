@@ -1,0 +1,463 @@
+:root{
+    --primary-color: #7285f6;
+    --secondary-color: #33334f;
+    --font-color: #3B5266;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--font-color)
+}
+
+body{
+    font-family: 'Arial';
+    background: #f8f8f8;
+}
+
+
+// General
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+.section{
+    min-height: 100vh;
+
+    .section-header{
+        text-align: center;
+        padding: 1rem;
+    
+        h2{
+            font-size: 2.3rem;
+        }
+    }
+
+    .section-body{
+        padding: 1rem;
+    }
+}
+
+
+
+
+
+
+// Fonts
+
+
+
+// Forms
+
+input{
+    
+}
+
+select{
+
+}
+
+.btn{
+    border: none;
+    background: #eee;
+    color: #444;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.btn.primary{
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.btn.secondary{
+    color: white;
+    background-color: var(--secondary-color);
+}
+
+.btn.lg{
+    padding: 1rem 1.4rem;
+    font-size: 1.05rem;
+}
+
+.btn.solid{
+    display: block;
+    width: 100%;
+}
+
+.btn.block{
+    border-radius: 0;
+}
+
+.btn.ghost{
+    color: var(--primary-color);
+    border: 1px solid;
+    background-color: transparent;
+}
+
+// Components
+.card{
+    box-shadow: 0 0px 1px 0 rgba(77, 77, 119, 0.3);
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+
+    .card-header{
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .card-body{
+        position: relative;
+        z-index: 1;
+        
+    }
+    .card-footer{
+        padding: .8rem 0;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.simple-card{
+    background-color: rgba(114, 133, 246, 0.1);
+    text-align: center;
+    
+    .card-header{
+        i{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            font-size: 1.9rem;
+            line-height: 80px;
+            box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.1);
+            transition: 500ms;
+        }
+    }
+
+    .card-body{
+        h4{
+            font-size: 1.6rem;
+            transition: 500ms;
+            margin: .4rem 0;
+        }
+
+        p{
+            margin: .3rem 0;
+        }
+    }
+
+    .card-footer{
+        a{
+            color: var(--primary-color);
+        }
+    }
+
+    &:after{
+        content: '';
+        width: 400px;
+        height: 300px;
+        display: block;
+        background-color: rgba(51, 51, 79, 0.03);
+        position: absolute;
+        bottom: -150px;
+        left: -160px;
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    &:hover{
+        .card-header{
+            i{
+                color: white;
+                background-color: var(--primary-color);
+            }
+        }
+
+        .card-body{
+            h4{
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.plan-card{
+    background-color: white;
+
+    .card-footer{
+        text-align: center;
+    }
+}
+
+// Sections
+#header{
+    height: 60px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+
+
+    .nav{
+        display: flex;
+        height: 60px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 .8rem;
+
+        .nav-logo{
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-menu{
+            .nav-list{
+                background: white;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                // padding: .5rem 0;
+                transition: max-height 500ms;
+                max-height: 0px;
+                overflow: hidden;
+                font-size: .8rem;
+
+                .nav-item{
+                    padding: .5rem 1rem;
+                }
+                // display: none;
+
+                &.show{
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+
+}
+
+#inicio{
+    padding: 2rem 1rem;
+    padding-top: calc(60px + 2rem);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .inicio-text{
+        position: relative;
+        z-index: 2;
+
+        .inicio-title{
+            font-size: 2.3rem;
+            margin-bottom: 2rem;
+        }
+    
+        .inicio-description{
+            line-height: 1.7rem;
+        }
+
+        .inicio-start{
+            font-weight: normal;
+            font-size: 1.3rem;
+            margin: 2.4rem 0;
+
+            .price{
+                font-size: 1.7rem;
+                font-weight: bold;
+                color: var(--primary-color);
+
+                small{
+                    color: var(--primary-color);
+                    transform: translate(0, 5px);
+                    display: inline-block;
+                }
+            }
+        }
+
+    }
+
+    .inicio-image{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 0;
+        transform: translate(0, -50%);
+        opacity: .3;
+    }
+}
+
+#search{
+    background: var(--secondary-color);
+    padding: 3rem 1.5rem;
+
+    h3{
+        color: white;
+        font-size: 1.8rem;
+    }
+
+    .search-input{
+        display: flex;
+        margin: 1.2rem 0;
+
+        input{
+            flex: auto;
+            border: none;
+            padding: 1rem .8rem;
+            font-size: 1.1rem;
+        }
+
+        select{
+            width: 80px;
+            border: none;
+            border-left: 1px solid #ccc;
+            padding-left: .4rem;
+        }
+    }
+
+    .domain-prices{
+        display: flex;
+        padding: .8rem 0;
+
+        .price-item{
+            flex: 1;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+
+#choose{
+    padding: 2rem 1rem;
+    background-color: white;
+}
+
+#plans{
+    padding: 3rem 1.5rem;
+
+    .plan{
+        .plan-header{
+            display: flex;
+            padding: 1rem 0;
+            justify-content: space-between;
+
+            .plan-label{
+                font-weight: bold;
+                color: #444;
+                font-size: 1.6rem;
+            }
+            .plan-price{
+                color: var(--primary-color);
+                font-weight: bold;
+                font-size: 1.9rem;
+                position: relative;
+
+                &::before{
+                    content: 'from';
+                    font-weight: normal;
+                    position: absolute;
+                    color: #aaa;
+                    bottom: 100%;
+                    font-size: .9rem;
+                }
+
+                &::after{
+                    font-weight: normal;
+                    content: '/mo.';
+                    font-size: .9rem;
+                    color: #aaa;
+                    margin-left: .5rem;
+                }
+            }
+        }
+
+        .plan-body{
+            p{
+                margin-bottom: 1rem;
+                color: #aaa;
+            }
+            ul{
+                li{
+                    color: var(--secondary-color);
+                    margin: 1rem 0;
+
+                    i{
+                        margin-right: 1rem;
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+// Medias
+@media (min-width: 576px) { 
+    body{
+        background: red;
+    }
+
+    .card{
+        width: 100%;
+        margin: 1.25rem auto;
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 768px) { 
+    body{
+        background: green;
+    }
+
+    .grid-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 1rem;
+    }
+    
+}
+
+@media (min-width: 992px) { 
+    body{
+        background: yellow;
+    }
+
+    .grid-card{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media (min-width: 1200px) { 
+    body{
+        background: blue;
+    }
+
+    .grid-card{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
